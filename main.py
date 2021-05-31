@@ -3,9 +3,10 @@ import random as rn
 
 t = tt.Turtle()
 wn = tt.Screen()
-wn.setup(1300,750)
+wn.setup(1300, 750)
 wn.bgcolor("gold")
 s = tt.getscreen()
+wn.title("TURTLE RACE")
 
 
 c = t.clone()
@@ -15,7 +16,7 @@ t.pensize(15)
 t.shapesize(2, 2, 2)
 
 b = t.clone()
-colors = ["red", "blue", "pink", "yellow", "green", "black","white", "orange"]
+colors = ["red", "blue", "pink", "yellow", "green", "black", "white", "orange"]
 
 name1 = tt.textinput("PLAYER 1", "ENTER NAME OF PLAYER 1:")
 name2 = tt.textinput("PLAYER 2", "ENTER NAME OF PLAYER 2:")
@@ -28,8 +29,8 @@ color2 = tt.textinput("COLOR SELECTION", "Player 2 enter the color you want:")
 while color2.lower() not in colors:
     color2 = tt.textinput("WRONG COLOR SELECTED", "Player 2 enter the color you want:")
 
-t.color("cyan", color2) #color2
-b.color("violet", color1) #color1
+t.color("cyan", color2)
+b.color("violet", color1)
 
 t.penup()
 t.goto(300, -300)
@@ -65,7 +66,7 @@ def mov_2(x, y):
         t.fd(rn.randint(1, 100))
     else:
         t.color("green")
-        t.write("I WON :)", align="center", font=("Arial", 30, "bold"))
+        t.write(f"{name2.capitalize()} WON :)", align="center", font=("Arial", 30, "bold"))
 
 
 def mov_1(x, y):
@@ -73,7 +74,7 @@ def mov_1(x, y):
         b.fd(rn.randint(1, 100))
     else:
         b.color("green")
-        b.write("I WON :)", align="center", font=("Arial", 30, "bold"))
+        b.write(f"{name1.capitalize()} WON :)", align="center", font=("Arial", 30, "bold"))
 
 
 t.onclick(mov_2)
