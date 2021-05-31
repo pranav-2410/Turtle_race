@@ -7,7 +7,7 @@ wn.setup(1300,750)
 wn.bgcolor("gold")
 s = tt.getscreen()
 
-start:
+
 c = t.clone()
 d = t.clone()
 t.shape("turtle")
@@ -79,9 +79,5 @@ def mov_1(x, y):
 t.onclick(mov_2)
 b.onclick(mov_1)
 
-if t.ycor()>=200 or b.ycor()>=200:
-    t.reset()
-    b.reset()
-    goto start;
 
 tt.done()
