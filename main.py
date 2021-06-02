@@ -62,7 +62,10 @@ d.write("----FINISH LINE----", move=True, align="left", font=("Arial", 25, "bold
 
 
 def mov_2(x, y):
-    if y <= 200:
+    if b.ycor() >= 200:
+        t.color("red")
+        t.write("Better luck next time :(", align="center", font=("Arial", 20, "normal"))
+    elif y <= 200:
         t.fd(rn.randint(1, 100))
     else:
         t.color("green")
@@ -70,7 +73,10 @@ def mov_2(x, y):
 
 
 def mov_1(x, y):
-    if y <= 200:
+    if t.ycor() >= 200:
+        b.color("red")
+        b.write("Better luck next time :(", align="center", font=("Arial", 20, "normal"))
+    elif y <= 200:
         b.fd(rn.randint(1, 100))
     else:
         b.color("green")
